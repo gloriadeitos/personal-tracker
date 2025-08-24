@@ -10,6 +10,7 @@ import {
   Stack
 } from 'tamagui'
 import { User, Lock, Eye, EyeOff } from '@tamagui/lucide-icons'
+import { getPetUrl } from '../utils/assets'
 
 interface LoginFormProps {
   currentPet: string
@@ -50,7 +51,7 @@ export const LoginForm = ({ currentPet }: LoginFormProps) => {
           height={80}
           zIndex={5}
           style={{
-            backgroundImage: `url('./pet/${currentPet}')`,
+            backgroundImage: `url('${getPetUrl(currentPet)}')`,
             backgroundSize: 'contain',
             backgroundRepeat: 'no-repeat',
             backgroundPosition: 'center'

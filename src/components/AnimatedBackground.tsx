@@ -1,4 +1,5 @@
 import { Stack } from 'tamagui'
+import { getBackgroundUrl, getPetUrl } from '../utils/assets'
 
 interface AnimatedBackgroundProps {
   background: string
@@ -35,7 +36,7 @@ export const AnimatedBackground = ({ background, pet }: AnimatedBackgroundProps)
       overflow="hidden"
       zIndex={0}
       style={{
-        backgroundImage: `url('./background/${background}')`,
+        backgroundImage: `url('${getBackgroundUrl(background)}')`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat'
@@ -52,7 +53,7 @@ export const AnimatedBackground = ({ background, pet }: AnimatedBackgroundProps)
         height={500}
         zIndex={1}
         style={{
-          backgroundImage: `url('./pet/${pet}')`,
+          backgroundImage: `url('${getPetUrl(pet)}')`,
           backgroundSize: 'contain',
           backgroundRepeat: 'no-repeat',
           backgroundPosition: 'bottom left'
@@ -78,7 +79,7 @@ export const AnimatedBackground = ({ background, pet }: AnimatedBackgroundProps)
           top="-100vh"
           left="-100vw"
           style={{
-            backgroundImage: `url('./pet/${pet}')`,
+            backgroundImage: `url('${getPetUrl(pet)}')`,
             backgroundRepeat: 'repeat',
             ...getAnimationStyle(pet)
           }}
