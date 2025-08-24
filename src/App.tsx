@@ -1,4 +1,6 @@
 import './App.css'
+import { TamaguiProvider } from '@tamagui/core'
+import tamaguiConfig from '../tamagui.config'
 
 import {
   BrowserRouter as Router,
@@ -10,11 +12,13 @@ import Login from './pages/login';
 
 function App() {
   return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<Login />} />
-      </Routes>
-    </ Router>
+    <TamaguiProvider config={tamaguiConfig}>
+      <Router>
+        <Routes>
+          <Route path="/" element={<Login />} />
+        </Routes>
+      </Router>
+    </TamaguiProvider>
   )
 }
 
