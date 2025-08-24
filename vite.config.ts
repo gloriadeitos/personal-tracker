@@ -1,5 +1,4 @@
 import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
 
 import { tamaguiPlugin } from '@tamagui/vite-plugin'
 
