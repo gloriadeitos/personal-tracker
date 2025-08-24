@@ -42,8 +42,26 @@ export const AnimatedBackground = ({ background, pet }: AnimatedBackgroundProps)
       }}
     />
     
-    {/* Não mostrar fundo animado se for clippy */}
-    {pet !== 'clippy.gif' && (
+    {/* Penguin no canto inferior esquerdo */}
+    {pet === 'penguin1.gif' && (
+      <Stack
+        position="absolute"
+        bottom={0}
+        left={40}
+        width={500}
+        height={500}
+        zIndex={1}
+        style={{
+          backgroundImage: `url('./pet/${pet}')`,
+          backgroundSize: 'contain',
+          backgroundRepeat: 'no-repeat',
+          backgroundPosition: 'bottom left'
+        }}
+      />
+    )}
+    
+    {/* Não mostrar fundo animado se for clippy ou penguin */}
+    {pet !== 'clippy.gif' && pet !== 'penguin1.gif' && (
       <Stack
         position="absolute"
         top={0}
