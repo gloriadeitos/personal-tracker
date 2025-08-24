@@ -11,11 +11,9 @@ import {
 import Login from './pages/login';
 
 function App() {
-  const basePath = import.meta.env.VITE_BASE_PATH || '/'
-
   return (
     <TamaguiProvider config={tamaguiConfig}>
-      <Router basename={basePath}>
+      <Router basename="/personal-tracker">
         <Routes>
           <Route path="/" element={<Login />} />
         </Routes>
