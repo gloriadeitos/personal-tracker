@@ -30,7 +30,7 @@ const Login = () => {
         justifyContent="center" 
         padding="$4"
       >
-        <LoginForm />
+        <LoginForm currentPet={currentPet} />
       </Stack>
     </Theme>
   )

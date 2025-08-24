@@ -42,27 +42,30 @@ export const AnimatedBackground = ({ background, pet }: AnimatedBackgroundProps)
       }}
     />
     
-    <Stack
-      position="absolute"
-      top={0}
-      left={0}
-      width="100vw"
-      height="100vh"
-      overflow="hidden"
-      zIndex={1}
-    >
+    {/* Não mostrar fundo animado se for clippy */}
+    {pet !== 'clippy.gif' && (
       <Stack
-        width="300vw"
-        height="300vh"
         position="absolute"
-        top="-100vh"
-        left="-100vw"
-        style={{
-          backgroundImage: `url('./pet/${pet}')`,
-          backgroundRepeat: 'repeat',
-          ...getAnimationStyle(pet)
-        }}
-      />
-    </Stack>
+        top={0}
+        left={0}
+        width="100vw"
+        height="100vh"
+        overflow="hidden"
+        zIndex={1}
+      >
+        <Stack
+          width="300vw"
+          height="300vh"
+          position="absolute"
+          top="-100vh"
+          left="-100vw"
+          style={{
+            backgroundImage: `url('./pet/${pet}')`,
+            backgroundRepeat: 'repeat',
+            ...getAnimationStyle(pet)
+          }}
+        />
+      </Stack>
+    )}
   </>
 )

@@ -12,7 +12,11 @@ import {
 } from 'tamagui'
 import { User, Lock, Eye, EyeOff } from '@tamagui/lucide-icons'
 
-export const LoginForm = () => {
+interface LoginFormProps {
+  currentPet: string
+}
+
+export const LoginForm = ({ currentPet }: LoginFormProps) => {
   const [showPassword, setShowPassword] = useState(false)
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
@@ -37,21 +41,23 @@ export const LoginForm = () => {
       shadowOpacity={1}
       position="relative"
     >
-      {/* Clippy GIF */}
-      <Stack
-        position="absolute"
-        bottom={-25}
-        right={-25}
-        width={80}
-        height={80}
-        zIndex={5}
-        style={{
-          backgroundImage: "url('./pet/clippy.gif')",
-          backgroundSize: 'contain',
-          backgroundRepeat: 'no-repeat',
-          backgroundPosition: 'center'
-        }}
-      />
+      {/* Mostrar apenas clippy no canto */}
+      {currentPet === 'clippy.gif' && (
+        <Stack
+          position="absolute"
+          bottom={-25}
+          right={-25}
+          width={80}
+          height={80}
+          zIndex={5}
+          style={{
+            backgroundImage: `url('./pet/${currentPet}')`,
+            backgroundSize: 'contain',
+            backgroundRepeat: 'no-repeat',
+            backgroundPosition: 'center'
+          }}
+        />
+      )}
 
       <YStack space="$4" alignItems="center">
         <Avatar circular size="$8" backgroundColor="$blue10">
