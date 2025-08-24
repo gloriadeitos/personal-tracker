@@ -7,7 +7,23 @@ interface FloatingButtonsProps {
 }
 
 export const FloatingButtons = ({ onBackgroundChange, onPetChange }: FloatingButtonsProps) => (
-  <XStack position="absolute" top="$4" right="$4" zIndex={10} space="$2">
+  <XStack 
+    position="absolute" 
+    top="$4" 
+    right="$4" 
+    zIndex={10} 
+    space="$2"
+    $sm={{
+      top: "$5",
+      right: "$4",
+      space: "$3"
+    }}
+    $xs={{
+      top: "$4",
+      right: "$4",
+      space: "$3"
+    }}
+  >
     <Button
       circular
       size="$4"
@@ -16,8 +32,15 @@ export const FloatingButtons = ({ onBackgroundChange, onPetChange }: FloatingBut
       borderWidth={1}
       onPress={onBackgroundChange}
       pressStyle={{ backgroundColor: "rgba(255, 255, 255, 1)" }}
+      $sm={{ size: "$6" }}
+      $xs={{ size: "$6" }}
     >
-      <Image size="$1.5" color="$color" />
+      <Image 
+        size="$1.5" 
+        color="$color" 
+        $sm={{ size: "$2.5" }}
+        $xs={{ size: "$2.5" }}
+      />
     </Button>
     
     <Button
@@ -28,8 +51,15 @@ export const FloatingButtons = ({ onBackgroundChange, onPetChange }: FloatingBut
       borderWidth={1}
       onPress={onPetChange}
       pressStyle={{ backgroundColor: "rgba(255, 255, 255, 1)" }}
+      $sm={{ size: "$6" }}
+      $xs={{ size: "$6" }}
     >
-      <Cat size="$1.5" color="$color" />
+      <Cat 
+        size="$1.5" 
+        color="$color" 
+        $sm={{ size: "$2.5" }}
+        $xs={{ size: "$2.5" }}
+      />
     </Button>
   </XStack>
 )

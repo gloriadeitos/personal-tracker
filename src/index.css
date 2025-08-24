@@ -1,0 +1,45 @@
+/* Melhorias para dispositivos móveis */
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Melhorias para touch */
+button, input {
+  appearance: none;
+  -webkit-appearance: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Evitar zoom em inputs em iOS */
+@media screen and (max-width: 767px) {
+  input[type="email"],
+  input[type="password"],
+  input[type="text"] {
+    font-size: 16px !important;
+  }
+}
+
+/* Melhorias para telas pequenas */
+@media screen and (max-width: 480px) {
+  html {
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  html {
+    font-size: 12px;
+  }
+}
