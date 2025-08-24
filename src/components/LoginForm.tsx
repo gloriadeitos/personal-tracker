@@ -1,6 +1,5 @@
 import { useState } from 'react'
 import { 
-  Avatar, 
   Button, 
   Card, 
   Input, 
@@ -60,13 +59,6 @@ export const LoginForm = ({ currentPet }: LoginFormProps) => {
       )}
 
       <YStack space="$4" alignItems="center">
-        <Avatar circular size="$8" backgroundColor="$blue10">
-          <Avatar.Image src="http://picsum.photos/200/300" />
-          <Avatar.Fallback backgroundColor="$blue10">
-            <User size="$2" color="white" />
-          </Avatar.Fallback>
-        </Avatar>
-
         <YStack space="$2" alignItems="center">
           <Text fontSize="$8" fontWeight="bold" color="$color">
             Bem-vindo de volta
@@ -122,13 +114,17 @@ export const LoginForm = ({ currentPet }: LoginFormProps) => {
                 secureTextEntry={!showPassword}
               />
               <Button
-                unstyled
+                chromeless
+                circular
+                size="$2"
                 onPress={() => setShowPassword(!showPassword)}
-                padding="$2"
+                backgroundColor="transparent"
+                hoverStyle={{ backgroundColor: "$color3" }}
+                pressStyle={{ backgroundColor: "$color4" }}
               >
                 {showPassword ? 
-                  <EyeOff size="$1" color="$color11" /> : 
-                  <Eye size="$1" color="$color11" />
+                  <EyeOff size="$1" color="$color9" /> : 
+                  <Eye size="$1" color="$color9" />
                 }
               </Button>
             </XStack>

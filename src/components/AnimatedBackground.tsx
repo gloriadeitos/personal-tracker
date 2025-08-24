@@ -43,7 +43,7 @@ export const AnimatedBackground = ({ background, pet }: AnimatedBackgroundProps)
     />
     
     {/* Penguin no canto inferior esquerdo */}
-    {pet === 'penguin1.gif' && (
+    {pet === 'penguin.gif' && (
       <Stack
         position="absolute"
         bottom={0}
@@ -61,7 +61,7 @@ export const AnimatedBackground = ({ background, pet }: AnimatedBackgroundProps)
     )}
     
     {/* Não mostrar fundo animado se for clippy ou penguin */}
-    {pet !== 'clippy.gif' && pet !== 'penguin1.gif' && (
+    {pet !== 'clippy.gif' && pet !== 'penguin.gif' && (
       <Stack
         position="absolute"
         top={0}
